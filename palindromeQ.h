@@ -1,0 +1,1 @@
+int palindromeQ(long n);
