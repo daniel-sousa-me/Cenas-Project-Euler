@@ -3,11 +3,11 @@
 #include "huge_integers.h"
 
 void main() {
-  huge_int n1 = (huge_int)malloc(400*sizeof(int));
-  huge_int n2 = (huge_int)malloc(400*sizeof(int));
-  huge_int n3 = (huge_int)malloc(400*sizeof(int));
+  huge_int n1 = (huge_int)malloc(400*sizeof(long));
+  huge_int n2 = (huge_int)malloc(400*sizeof(long));
+  huge_int n3 = (huge_int)malloc(400*sizeof(long));
   
-  int i = 0;
+  long i = 0;
   while(i<400) {
     n1[i] = 0;
     n2[i] = 0;
@@ -15,11 +15,12 @@ void main() {
     i++;
   }
   n1[399] = 2;
+
   i = 1;
   while(i<1000) {
-    copy_huge_int(400,n1,n2);
-    huge_sum(400,n1,n2,n3);
-    copy_huge_int(400,n3,n1);
+    copy_huge_int(400, n1, n2);
+    huge_sum(400, n1, n2, n3);
+    copy_huge_int(400, n3, n1);
     i++;
   }
   
@@ -30,5 +31,5 @@ void main() {
     i++;
   }
   
-  printf("A soma dá: %ld\n", r);
+  printf("%ld\n", r);
 }

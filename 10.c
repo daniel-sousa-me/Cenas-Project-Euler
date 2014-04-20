@@ -2,9 +2,10 @@
 #include "stack.h"
 #include "eratosthenes.h"
 
-void main() {
+void main()
+{
   generateEratosthenes(2000000);
-  FILE* f;
+  FILE *f;
   f = fopen("eratosthenes.list", "r");
   fseek(f,1,SEEK_SET);
   
@@ -12,9 +13,10 @@ void main() {
   long r = 0;
   char aux;
   while(i<2000000) {
-    fread(&aux,1,1,f);
+    fread(&aux, 1, 1, f);
     if(aux=='1') r += i;
     i++;
   }
-  printf("A tal soma é: %ld\n",r);
+
+  printf("%ld\n", r);
 }

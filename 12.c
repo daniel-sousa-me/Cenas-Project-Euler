@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "divisors.h"
 
-void main() {
+void main()
+{
   generateDivisorsList(20000);
 
   FILE *f;
@@ -14,21 +15,21 @@ void main() {
     if(i%2==0) {
       long j = 0;
       while(j<i/2) {
-	fscanf(f,"%ld",&aux1);
+	fscanf(f, "%ld", &aux1);
 	j++;
       }
       while(j<i+1) {
-	fscanf(f,"%ld",&aux2);
+	fscanf(f, "%ld", &aux2);
 	j++;
       }
     } else {
       long j = 0;
       while(j<(i+1)/2) {
-	fscanf(f,"%ld",&aux1);
+	fscanf(f, "%ld", &aux1);
 	j++;
       }
       while(j<i) {
-	fscanf(f,"%ld",&aux2);
+	fscanf(f, "%ld", &aux2);
 	j++;
       }
     }
@@ -36,5 +37,6 @@ void main() {
   }
 
   fclose(f);
-  printf("A resposta é %ld\n",i*(i-1)/2);
+
+  printf("%ld\n", i*(i-1)/2);
 }

@@ -1,4 +1,4 @@
-void generateEratosthenes(int n);
-int eratosthenesPrimeQ(int n);
-stack eratosthenesPrimes(int n);
-int eratosthenesPrime(int n);
+void generateEratosthenes(long n);
+int eratosthenesPrimeQ(long n);
+stack eratosthenesPrimes(long n);
+long eratosthenesPrime(long n);

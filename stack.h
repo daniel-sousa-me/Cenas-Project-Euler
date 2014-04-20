@@ -1,5 +1,5 @@
 struct node {
-  int val;
+  long val;
   struct node* next;
 };
 
@@ -7,14 +7,14 @@ typedef struct node node;
 typedef node* nodept;
 
 struct stack {
-  int size;
+  long size;
   nodept last;
 };
 
 typedef struct stack* stack;
 
 stack newStack();
-int top(stack s, int i);
-void push(stack s, int i);
-int pop(stack s);
+long top(stack s);
+void push(stack s, long i);
+long pop(stack s);
 void destroy(stack s);

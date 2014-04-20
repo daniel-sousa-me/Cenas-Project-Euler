@@ -1,8 +1,10 @@
 #include <stdio.h>
 
-void main() {
+void main()
+{
   long max = 1, nmax = 0;
   long i = 2;
+
   while(i<=1000000) {
     long j = i, k = 0;
     while(j!=1) {
@@ -20,5 +22,5 @@ void main() {
     i++;
   }
 
-  printf("O número máximo é %ld com comprimento %ld\n",max,nmax);
+  printf("%ld\n", max);
 }

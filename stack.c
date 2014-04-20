@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include "stack.h"
 
-stack newStack() {
+stack newStack()
+{
   stack s;
   s = (stack) malloc(sizeof(struct stack));
   s->size = 0;
@@ -10,11 +11,13 @@ stack newStack() {
   return s;
 }
 
-int top(stack s, int i) {
+long top(stack s)
+{
   return s->last->val;
 }
 
-void push(stack s, int i) {
+void push(stack s, long i)
+{
   s->size++;
   nodept aux = s->last;
   s->last = (nodept)malloc(sizeof(node));
@@ -22,8 +25,9 @@ void push(stack s, int i) {
   s->last->val = i;
 }
 
-int pop(stack s) {
-  node* aux = s->last;
+long pop(stack s)
+{
+  node *aux = s->last;
   s->size--;
   s->last = s->last->next;
   int aux2 = aux->val;
@@ -31,8 +35,9 @@ int pop(stack s) {
   return aux2;
 }
 
-void destroy(stack s) {
-  while(s->size > 0) {
+void destroy(stack s)
+{
+  while(s->size>0) {
     pop(s);
   }
   free(s);

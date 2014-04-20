@@ -3,26 +3,28 @@
 void generateDivisorsList(long n) {
   FILE *f;
   f = fopen("divisors.list", "w+");
+
   long i = 0;
   while(i<n) {
-    fprintf(f,"0000000001\n");
+    fprintf(f, "0000000001\n");
     i++;
   }
-  fprintf(f,"                 ");
+
   i = 2;
   long auxn = 0;
   while(i<=n) {
     long j = 0;
     rewind(f);
     while(j<=1 || j<i) {
-      fscanf(f,"%ld",&auxn);
+      fscanf(f, "%ld", &auxn);
       j++;
     }
     while(auxn!=1 && i<n) {
-      fscanf(f,"%ld",&auxn);
+      fscanf(f, "%ld", &auxn);
       j++;
       i++;
     }
+
     if(auxn==1) {
       while(j<=n) {;
 	long k = 0;
@@ -39,11 +41,10 @@ void generateDivisorsList(long n) {
 	  k++;
 	}
 	fseek(f,-k,SEEK_CUR);
-	fprintf(f,"%ld",auxn);
-	//	if(auxn>100)printf("%ld %ld %ld\n",i,j,auxn);
+	fprintf(f, "%ld", auxn);
 	k = 0;
 	while(k<i) {
-	  fscanf(f,"%ld",&auxn);
+	  fscanf(f, "%ld", &auxn);
 	  k++;
 	  j++;
 	}

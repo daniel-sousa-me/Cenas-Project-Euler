@@ -1,30 +1,31 @@
 #include <stdio.h>
 
-void main() {
+void main()
+{
   FILE *f;
-  f = fopen("67.triangle","r");
+  f = fopen("67.triangle", "r");
   
-  int s[100];
-  fscanf(f, "%d", &s[0]);
-  int i = 1;
+  long s[100];
+  fscanf(f, "%ld", &s[0]);
+  long i = 1;
   while(i<100) {
-    int aux[i+1];
-    int j = 0;
+    long aux[i+1];
+    long j = 0;
     while(j<=i) {
       fscanf(f, "%d", &aux[j]);
       j++;
     }
     j = i-1;
-    s[i] = s[i-1] + aux[i];
+    s[i] = s[i-1]+aux[i];
     while(j>0) {
       if(s[j-1]>s[j]) {
-	s[j] = s[j-1] + aux[j];
+	s[j] = s[j-1]+aux[j];
       } else {
-	s[j] = s[j] + aux[j];
+	s[j] = s[j]+aux[j];
       }
       j--;
     }
-    s[0] = s[0] + aux[0];
+    s[0] = s[0]+aux[0];
 
     /*
     j = 0;
@@ -45,6 +46,7 @@ void main() {
     i++;
   }
 
-  printf("O resultado é %d\n", r);
   fclose(f);
+
+  printf("%ld\n", r);
 }
