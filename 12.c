@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "divisors.h"
 
-void main()
+int main()
 {
   generateDivisorsList(20000);
 

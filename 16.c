@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "huge_integers.h"
 
-void main() {
+int main() {
   huge_int n1 = (huge_int)malloc(400*sizeof(long));
   huge_int n2 = (huge_int)malloc(400*sizeof(long));
   huge_int n3 = (huge_int)malloc(400*sizeof(long));

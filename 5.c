@@ -2,7 +2,7 @@
 #include "stack.h"
 #include "eratosthenes.h"
 
-void main()
+int main()
 {
   long n = 20;
   generateEratosthenes(n);

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
   long a=0, b=1;
   long s=0;

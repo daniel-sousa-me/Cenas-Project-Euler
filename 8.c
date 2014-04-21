@@ -10,7 +10,7 @@ long product(long* l) {
   return r;
 }
 
-void main()
+int main()
 {
   FILE *f;
   f = fopen("8.list", "r");

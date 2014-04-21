@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "huge_integers.h"
 
-void main()
+int main()
 {
   FILE *f;
   f = fopen("13.list", "r");

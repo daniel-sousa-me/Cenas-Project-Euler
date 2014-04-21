@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "palindromeQ.h"
 
-void main()
+int main()
 {
   long i = 100;
   long r = 0;

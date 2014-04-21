@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
   long i = 1;
   long r = 0;

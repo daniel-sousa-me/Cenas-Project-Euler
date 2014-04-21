@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
   long n = 600851475143;
   long i = 3;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
   long max = 1, nmax = 0;
   long i = 2;

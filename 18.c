@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void main()
+int main()
 {
   FILE *f;
   f = fopen("18.triangle", "r");
