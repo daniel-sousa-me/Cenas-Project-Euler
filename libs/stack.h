@@ -3,7 +3,7 @@ typedef struct node {
   struct node *next;
 } node, *nodept;
 
-typedef struct stack2 {
+typedef struct stack {
   long size;
   nodept last;
 } *stack;
