@@ -17,7 +17,9 @@ int main()
     if(aux=='1') r += i;
     i++;
   }
-
+  
+  fclose(f);
+  
   printf("%ld\n", r);
   return 0;
 }

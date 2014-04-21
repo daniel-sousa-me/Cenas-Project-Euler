@@ -17,7 +17,8 @@ int main()
     r *= q;
     pop(p);
   }
-
+  
+  destroy(p);
   printf("%ld\n", r);
   return 0;
 }

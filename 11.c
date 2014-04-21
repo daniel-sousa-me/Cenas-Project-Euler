@@ -38,7 +38,9 @@ int main()
     }
     i++;
   }
-
+  
+  fclose(f);
+  
   printf("%ld\n", r);
   return 0;
 }

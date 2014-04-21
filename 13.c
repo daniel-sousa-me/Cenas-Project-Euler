@@ -39,8 +39,18 @@ int main()
     huge_sum(100, aux, l[i], r);
     i++;
   }
-  
+
   print_huge_int(100, r);
   printf("\n");
+
+  i = 0;
+  while(i<100) {
+    free(l[i]);
+    i++;
+  }
+  free(r);
+  free(aux);
+  fclose(f);
+  
   return 0;
 }

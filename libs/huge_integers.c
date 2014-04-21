@@ -16,7 +16,7 @@ void huge_sum(long s, huge_int a, huge_int b, huge_int r)
   r[s-1] = 0;
   while(i>=0) {
     r[i] += a[i]+b[i];
-    r[i-1] = r[i]/10;
+    if(i>0)r[i-1] = r[i]/10;
     r[i] = r[i]%10;
     i--;
   }

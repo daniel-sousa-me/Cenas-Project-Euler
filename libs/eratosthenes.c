@@ -26,6 +26,7 @@ void generateEratosthenes(long n)
     }
     i++;
   }
+  
   fclose(f);
 }
 

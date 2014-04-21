@@ -37,5 +37,12 @@ int main() {
   }
 
   printf("%ld\n", s);
+
+  free(r);
+  free(r_aux);
+  free(huge_i);
+  free(huge_i_aux);
+  free(aux);
+  
   return 0;
 }

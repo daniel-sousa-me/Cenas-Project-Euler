@@ -9,7 +9,7 @@ int main()
   f = fopen("divisors.list", "r");
 
   long i = 2;
-  long aux1, aux2;
+  long aux1 = 1, aux2 = 1;
   while(i<=20000 && aux1*aux2<500) {
     rewind(f);
     if(i%2==0) {

@@ -37,6 +37,8 @@ int main()
     fread(&aux, 1, 1, f);
   }
 
+  fclose(f);
+  
   printf("%ld\n", r);
   return 0;
 }
