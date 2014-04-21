@@ -4,34 +4,32 @@
 
 int main() {
   huge_int r = (huge_int)malloc(200*sizeof(long));
-  huge_int r_aux = (huge_int)malloc(200*sizeof(long));
+  huge_int r_aux;
   huge_int huge_i = (huge_int)malloc(200*sizeof(long));
-  huge_int huge_i_aux = (huge_int)malloc(200*sizeof(long));
-  huge_int aux = (huge_int)malloc(200*sizeof(long));
+  huge_int huge_i_aux;
+  huge_int aux = (huge_int)malloc(2*sizeof(long)); //Always 1
 
-  r[199] = 1;
-  huge_i[199] = 1;
-  aux[199] = 1;
-  long i = 0;
-  while(i<199) {
-    r[i] = 0;
-    huge_i[i] = 0;
-    aux[i] = 0;
-    i++;
-  }
-  
-  i = 1;
+  r[0] = 1;
+  r[1] = -1;
+  huge_i[0] = 1;
+  huge_i[1] = -1;
+  aux[0] = 1;
+  aux[1] = -1;
+
+  long i = 1;
   while(i<=100) {
-    copy_huge_int(200, r, r_aux);
-    huge_product(200, r_aux, huge_i, r);
-    copy_huge_int(200, huge_i, huge_i_aux);
-    huge_sum(200, huge_i_aux, aux, huge_i);
+    r_aux = huge_product(r, huge_i);
+    huge_int_cpy(r, r_aux);
+    free(r_aux);
+    huge_i_aux = huge_sum(huge_i, aux);
+    huge_int_cpy(huge_i, huge_i_aux);
+    free(huge_i_aux);   
     i++;
   }
   
   i = 0;
   long s = 0;
-  while(i<200) {
+  while(r[i]!=-1) {
     s += r[i];
     i++;
   }
@@ -39,9 +37,7 @@ int main() {
   printf("%ld\n", s);
 
   free(r);
-  free(r_aux);
   free(huge_i);
-  free(huge_i_aux);
   free(aux);
   
   return 0;

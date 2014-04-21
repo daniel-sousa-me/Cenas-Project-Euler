@@ -3,39 +3,33 @@
 #include "huge_integers.h"
 
 int main() {
-  huge_int n1 = (huge_int)malloc(400*sizeof(long));
-  huge_int n2 = (huge_int)malloc(400*sizeof(long));
-  huge_int n3 = (huge_int)malloc(400*sizeof(long));
-  
-  long i = 0;
-  while(i<400) {
-    n1[i] = 0;
-    n2[i] = 0;
-    n3[i] = 0;
-    i++;
-  }
-  n1[399] = 2;
+  huge_int a = (huge_int)malloc(2*sizeof(long));
+  huge_int r = (huge_int)malloc(400*sizeof(long));
+  huge_int aux;
+  a[0] = 2;
+  a[1] = -1;
+  r[0] = 2;
+  r[1] = -1;
 
-  i = 1;
+  long i = 1;
   while(i<1000) {
-    copy_huge_int(400, n1, n2);
-    huge_sum(400, n1, n2, n3);
-    copy_huge_int(400, n3, n1);
+    aux = huge_product(a, r);
+    huge_int_cpy(r, aux);
+    free(aux);
     i++;
   }
   
-  long r = 0;
+  long s = 0;
   i = 0;
-  while(i<400) {
-    r += n1[i];
+  while(r[i]!=-1) {
+    s += r[i];
     i++;
   }
   
-  printf("%ld\n", r);
+  printf("%ld\n", s);
 
-  free(n1);
-  free(n2);
-  free(n3);
+  free(a);
+  free(r);
   
   return 0;
 }

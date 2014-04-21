@@ -7,49 +7,32 @@ int main()
   FILE *f;
   f = fopen("13.list", "r");
   
-  huge_int l[100];
+  huge_int r = (huge_int)malloc(100*sizeof(long));
+  huge_int aux1 = (huge_int)malloc(51*sizeof(long));
+  huge_int aux2;
   long i = 0;
-  while(i<100) {
-    l[i] = (huge_int)malloc(100*sizeof(long));
-    i++;
-  }
-
-  i = 0;
+  r[0] = -1;
+  
   while(i<100) {
     char s[51];
     fscanf(f, "%s", s);
     long j = 0;
     while(j<50) {
-      l[i][j] = 0;
+      aux1[49-j] = s[j]-'0';
       j++;
     }
-    while(j<100) {
-      l[i][j] = s[j-50]-'0';
-      j++;
-    }
+    aux1[50] = -1;
+    aux2 = huge_sum(r, aux1);
+    huge_int_cpy(r, aux2);
+    free(aux2);
     i++;
   }
 
-  huge_int r = (huge_int)malloc(100*sizeof(long));
-  huge_int aux = (huge_int)malloc(100*sizeof(long));
-  copy_huge_int(100, l[0], r);
-  i = 1;
-  while(i<100) {
-    copy_huge_int(100, r, aux);
-    huge_sum(100, aux, l[i], r);
-    i++;
-  }
-
-  print_huge_int(100, r);
+  print_huge_int(r);
   printf("\n");
 
-  i = 0;
-  while(i<100) {
-    free(l[i]);
-    i++;
-  }
   free(r);
-  free(aux);
+  free(aux1);
   fclose(f);
   
   return 0;
