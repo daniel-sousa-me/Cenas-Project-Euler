@@ -23,7 +23,7 @@ int main() {
   i = 1;
   while(i<=100) {
     copy_huge_int(200, r, r_aux);
-    huge_product(200, r_aux, huge_i,r);
+    huge_product(200, r_aux, huge_i, r);
     copy_huge_int(200, huge_i, huge_i_aux);
     huge_sum(200, huge_i_aux, aux, huge_i);
     i++;
