@@ -1,17 +1,12 @@
-struct node {
+typedef struct node {
   long val;
-  struct node* next;
-};
+  struct node *next;
+} node, *nodept;
 
-typedef struct node node;
-typedef node* nodept;
-
-struct stack {
+typedef struct stack2 {
   long size;
   nodept last;
-};
-
-typedef struct stack* stack;
+} *stack;
 
 stack newStack();
 long top(stack s);
