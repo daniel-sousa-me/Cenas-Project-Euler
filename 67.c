@@ -12,7 +12,7 @@ int main()
     long aux[i+1];
     long j = 0;
     while(j<=i) {
-      fscanf(f, "%d", &aux[j]);
+      fscanf(f, "%ld", &aux[j]);
       j++;
     }
     j = i-1;
@@ -40,7 +40,7 @@ int main()
   }
 
   i = 1;
-  int r = s[0];
+  long r = s[0];
   while(i<100) {
     if(s[i]>r) r = s[i];
     i++;
