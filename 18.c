@@ -50,4 +50,5 @@ int main()
   fclose(f);
 
   printf("%ld\n", r);
+  return 0;
 }

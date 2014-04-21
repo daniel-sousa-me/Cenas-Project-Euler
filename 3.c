@@ -13,4 +13,5 @@ int main()
   }
 
   printf("%ld\n", n);
+  return 0;
 }

@@ -42,4 +42,5 @@ int main()
   
   print_huge_int(100, r);
   printf("\n");
+  return 0;
 }

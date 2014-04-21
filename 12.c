@@ -39,4 +39,5 @@ int main()
   fclose(f);
 
   printf("%ld\n", i*(i-1)/2);
+  return 0;
 }
